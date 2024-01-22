@@ -9,3 +9,4 @@ const readStream = fs.createReadStream(
 let data = '';
 readStream.on('data', (chunk) => (data += chunk));
 readStream.on('end', () => console.log(data));
+readStream.on('error', (error) => console.log(`ERROR!\n${error.message}`));
